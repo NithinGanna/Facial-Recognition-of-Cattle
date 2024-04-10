@@ -1,0 +1,374 @@
+/* Custom styles for the floating window */
+.floating-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #f4f4f5;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+}
+
+/* Style for the close button */
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #555;
+}
+
+/* Style for the image inside the floating window */
+.floating-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+/* Custom CSS for navbar hover effect */
+.navbar-dark .navbar-nav .nav-link {
+    transition: color 0.4s ease-in-out;
+    position: relative;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: transparent;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ff6600; /* Change text color on hover */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+    background-color: #ff6600; /* Change underline color on hover */
+}
+
+/* Styles for the form */
+#imageForm {
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#imageForm .form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+#imageForm .form-control {
+    margin-bottom: 15px;
+}
+
+#imageForm .btn-primary {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    #imageForm .btn-primary {
+        width: auto;
+    }
+}
+
+/* Additional styling for better appearance */
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+/* Define the blinking animation */
+@keyframes blink {
+0% { opacity: 0; }
+50% { opacity: 1; }
+100% { opacity: 0; }
+}
+
+/* Apply the animation to the verified line */
+.verified-line {
+animation: blink 1s infinite; /* Make it blink continuously */
+}
+
+.image-row {
+display: flex;
+justify-content: space-between; /* Adjust the space between images */
+}
+
+.image-row img {
+width: 45%; /* Adjust the width of individual images */
+height: 45%;
+}
+
+/* CSS for the spinner */
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loader {
+    margin-top: 15px;
+    width: 50px;
+    height: 165px;
+    position: relative;
+    
+  }
+  .loader::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50% , 0);
+    width: 16px;
+    height: 16px;
+    background: #FF3D00;
+    border-radius: 50%;
+    animation: bounce 1.5s linear infinite;
+  }
+  .loader::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 48px;
+    width: 48px;
+    background: #000;
+    border-radius: 4px;
+    animation: rotate 1.5s linear infinite;
+  }
+  
+  @keyframes bounce {
+    0% , 50% , 100%{
+      transform: translate(-50%, 0px);
+      height: 20px;
+    }
+    20% {
+      transform: translate(-25%, 85px);
+      height: 28px;
+    }
+    25% {
+      transform: translate(-25%, 110px);
+      height: 12px;
+    }
+    70% {
+      transform: translate(-75%, 85px);
+      height: 28px;
+    }
+    75% {
+      transform: translate(-75%, 108px);
+      height: 12px;
+    }
+  }
+  @keyframes rotate {
+    0% , 50% , 100%{ transform: rotate(0deg)}
+    25% { transform: rotate(90deg)}
+    75%{ transform: rotate(-90deg)}
+  }
+  
+  
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+    background-color: #333;
+    border-radius: 100%;
+    animation: pulse 1s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.6);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.6);
+      opacity: 0.7;
+    }
+  }
+
+/* Add these styles to your CSS file */
+
+/* Add these styles to your CSS file */
+
+.error-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: silver;
+  color: rgba(255, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 9999;
+  width: 60%; /* Adjust the width as needed */
+  max-width: 600px; /* Set maximum width if necessary */
+  min-height: 50%; /* At least half of the page */
+  overflow: auto; /* Enable scrolling if content exceeds the window */
+}
+
+.error-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Confirmed.css */
+
+.confirmed-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.confirmed-card img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.confirmed-card h2 {
+  margin-bottom: 10px;
+  color: #ff0000;
+}
+
+.confirmed-card p {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+ .newR-loader {
+  position: relative;
+  width: 100px;
+  height: 110px;
+  background: #fff;
+  border-radius: 4px;
+}
+.newR-loader:before{
+  content: '';
+  position: absolute;
+  width: 54px;
+  height: 25px;
+  left: 50%;
+  top: 0;
+  background-image:
+  radial-gradient(ellipse at center, #0000 24%,#de3500 25%,#de3500 64%,#0000 65%),
+  linear-gradient(to bottom, #0000 34%,#de3500 35%);
+  background-size: 12px 12px , 100% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  transform: translate(-50% , -65%);
+  box-shadow: 0 -3px rgba(0, 0, 0, 0.25) inset;
+}
+.newR-loader:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  width: 66%;
+  height: 60%;
+  background: linear-gradient(to bottom, #f79577 30%, #0000 31%);
+  background-size: 100% 16px;
+  animation: writeDown 2s ease-out infinite;
+}
+
+@keyframes writeDown {
+  0% { height: 0%; opacity: 0;}
+  20%{ height: 0%; opacity: 1;}
+  80% { height: 65%; opacity: 1;}
+  100% { height: 65%; opacity: 0;}
+}
+
+/* HTML: <div class="loader"></div> */
+.register-loader {
+  --c1:#673b14;
+  --c2:#f8b13b;
+  width: 35px;
+  height: 65px;
+  border-top: 4px solid var(--c1);
+  border-bottom: 4px solid var(--c1);
+  background: linear-gradient(90deg, var(--c1) 2px, var(--c2) 0 5px,var(--c1) 0) 50%/7px 8px no-repeat;
+  display: grid;
+  overflow: hidden;
+  animation: l5-0 2s infinite linear;
+  position: absolute;
+  top: 80%;
+  left: 45%;
+}
+.register-loader::before,
+.register-loader::after {
+  content: "";
+  grid-area: 1/1;
+  width: 75%;
+  height: calc(50% - 4px);
+  margin: 0 auto;
+  border: 2px solid var(--c1);
+  border-top: 0;
+  box-sizing: content-box;
+  border-radius: 0 0 40% 40%;
+  -webkit-mask: 
+    linear-gradient(#000 0 0) bottom/4px 2px no-repeat,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+  background: 
+    linear-gradient(var(--d,0deg),var(--c2) 50%,#0000 0) bottom /100% 205%,
+    linear-gradient(var(--c2) 0 0) center/0 100%;
+  background-repeat: no-repeat;
+  animation: inherit;
+  animation-name: l5-1;
+}
+.register-loader::after {
+  transform-origin: 50% calc(100% + 2px);
+  transform: scaleY(-1);
+  --s:3px;
+  --d:180deg;
+}
+@keyframes l5-0 {
+  80%  {transform: rotate(0)}
+  100% {transform: rotate(0.5turn)}
+}
+@keyframes l5-1 {
+  10%,70%  {background-size:100% 205%,var(--s,0) 100%}
+  70%,100% {background-position: top,center}
+}
